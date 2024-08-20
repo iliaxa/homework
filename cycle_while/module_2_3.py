@@ -7,4 +7,3 @@ while count < my_list_len and my_list[count] >= 0:
         count = count + 1
     else:
         count = count + 1
-print('out of cycle')
