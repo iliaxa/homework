@@ -40,3 +40,5 @@ print(join_)
 difficulty = 'easy'
 thing = 'exam'
 print('That {} was {}!'.format(thing, difficulty))
+
+# .endswith('.com', '.ru', '.net') #проверяет оканчивается ли на ()
