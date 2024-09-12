@@ -1,0 +1,6 @@
+def divide(first, second):
+    if second == 0:
+        res = 'Ошибка: деление на ноль'
+        return res
+    res = first / second
+    return res
