@@ -19,7 +19,7 @@ class House:
         if isinstance(other, House):
             return self.quantity_floors == other.quantity_floors
         else:
-            return f"UNSUPPORTED TYPE FOR ADD"
+            return f"UNSUPPORTED TYPE"
 
     def __gt__(self, other):
         return self.quantity_floors > other.quantity_floors
