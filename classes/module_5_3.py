@@ -18,36 +18,32 @@ class House:
     def __eq__(self, other):
         if isinstance(other, House):
             return self.quantity_floors == other.quantity_floors
+        elif isinstance(other, int):
+            return self.quantity_floors == other
         else:
             return f"UNSUPPORTED TYPE"
 
-    def __gt__(self, other):
-        return self.quantity_floors > other.quantity_floors
-
     def __lt__(self, other):
-        return self.quantity_floors < other.quantity_floors
-
-    def __ge__(self, other):
-        return self.quantity_floors >= other.quantity_floors
+        if isinstance(other, House):
+            return self.quantity_floors < other.quantity_floors
+        elif isinstance(other, int):
+            return self.quantity_floors < other
+        else:
+            return f"UNSUPPORTED TYPE"
 
     def __le__(self, other):
-        return self.quantity_floors <= other.quantity_floors
-
+        return self.__eq__(other) or self.__lt__(other)
+        
+    def __gt__(self, other):
+        return not self.__le__(other)
+    
+    def __ge__(self, other):
+        return not self.__lt__(other)
+   
     def __ne__(self, other):
-        return self.quantity_floors != other.quantity_floors
+        return not self.__eq__(other)
 
     def __add__(self, other):
-        if isinstance(other, House):
-            return House(self.name, self.quantity_floors + other.quantity_floors)
-        elif isinstance(other, int):
-            return House(self.name, self.quantity_floors + other)
-        else:
-            return f"UNSUPPORTED TYPE FOR ADD"
-
-    def __radd__(self, other):
-        return self.__add__(other)
-
-    def __iadd__(self, other):
         if isinstance(other, House):
             self.quantity_floors += other.quantity_floors
         elif isinstance(other, int):
@@ -55,6 +51,12 @@ class House:
         else:
             return f"UNSUPPORTED TYPE"
         return self
+
+    def __radd__(self, other):
+        return self.__add__(other)
+
+    def __iadd__(self, other:int):
+        return self.__add__(other)
 
     def __str__(self):
         return f"Название: {self.name}, кол-во этажей: {self.quantity_floors}"
@@ -84,5 +86,4 @@ print(h1 > h2)  # __gt__
 print(h1 >= h2)  # __ge__
 print(h1 < h2)  # __lt__
 print(h1 <= h2)  # __le__
-print(h1 != h2)  # __ne__
-                                                                                                                      
+print(h1 != h2)  # __ne__                                                                         
