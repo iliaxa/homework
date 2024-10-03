@@ -1,0 +1,27 @@
+class Human:
+    def __init__(self, name, group):
+        self.name = name
+        super().__init__(group)
+        super().about()
+
+    def info(self):
+        print(f'Hellow, my name is {self.name}')
+
+class Student_group:
+    def __init(self, group):
+        self.group = group
+
+    def about(self):
+        print(f'I am {self.name} in {self.group} group')
+
+class Student(Human, Student_group):
+    def __init__(self, name, place, group):
+        super().__init__(name, group)
+        self.place = place
+        super().info()
+
+
+Man = Student('Max','Perco','EDAKI')
+# print(Man.about())
+# print(Man.name)
+# print(Student.mro())
