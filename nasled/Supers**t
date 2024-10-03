@@ -8,7 +8,7 @@ class Human:
         print(f'Hellow, my name is {self.name}')
 
 class Student_group:
-    def __init(self, group):
+    def __init__(self, group):
         self.group = group
 
     def about(self):
