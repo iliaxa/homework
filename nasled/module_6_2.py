@@ -24,7 +24,8 @@ class Vehicle:
         print(f"Владелец: {self.owner}")
 
     def set_color(self, new_color):
-        if new_color.lower() in self.__COLOR_VARIANTS:
+        lowercase_list = [elem.lower() for elem in self.__COLOR_VARIANTS]
+        if new_color.lower() in lowercase_list:
             self.__color = new_color
         else:
             print(f'Нельзя сменить цвет на {new_color}')
@@ -37,17 +38,12 @@ class Sedan(Vehicle):
 vehicle1 = Sedan('Fedos', 'Toyota Mark II', 'blue', 500)
 
 # Изначальные свойства
-# vehicle1.print_info()
+vehicle1.print_info()
 
 # Меняем свойства (в т.ч. вызывая методы)
 vehicle1.set_color('Pink')
-print(vehicle1.get_color())
 vehicle1.set_color('BLACK')
-# vehicle1.owner = 'Vasyok'
-print(vehicle1.get_color())
-vehicle1.__color = 'red'
-print(vehicle1.__color)
-print(vehicle1.get_color())
-print(vehicle1.__color)
+vehicle1.owner = 'Vasyok'
+
 # Проверяем что поменялось
-# vehicle1.print_info()
+vehicle1.print_info()
