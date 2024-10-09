@@ -1,6 +1,3 @@
-from typing import Counter
-
-
 def custom_write(file_name, strings):
     strings_positions = {}
     file = open(file_name, 'w', encoding='utf-8')
