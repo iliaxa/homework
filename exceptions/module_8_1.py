@@ -2,7 +2,6 @@ def add_everything_up(a, b):
     try:
         c = a + b
     except TypeError:
-        print("You can't add a string and a number!")
         return f'{a}{b}'
     else:
         return c
