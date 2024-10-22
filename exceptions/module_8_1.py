@@ -4,7 +4,7 @@ def add_everything_up(a, b):
     except TypeError:
         return f'{a}{b}'
     else:
-        return c
+        return round(c, 3)
 
 
 print(add_everything_up(123.456, 'строка'))
