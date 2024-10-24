@@ -17,7 +17,6 @@ def get_advanced_writer(file_name):
                     #     file.write(str(item) + '\n')
                 else:
                     file.write(data + '\n')
-    
     return write_everything
 
 first_ball = MysticBall('Да', 'Нет', 'Наверное')
